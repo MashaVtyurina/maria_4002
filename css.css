@@ -1,0 +1,9 @@
+h1 {
+  color: rgb(65, 65, 140);
+  background-color: rgb(124, 173, 238);
+  border: 1px solid rgba(0, 0, 0, 0.693);
+}
+
+p {
+  color: rgb(255, 0, 217);
+}

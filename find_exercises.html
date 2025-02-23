@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<img src="C:\xampp\htdocs\training_helper\images\7677841e3ea4a495f7bcbe86543e6449.jpg" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Kalnia:wght@500&family=Lemonada:wght@600&family=Michroma&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+	body{
+			background: radial-gradient(#F8AD9D,#57CC99,#C7F9CC);
+			justify-content: space-between;
+			font-family:'Michroma',sans-serif;
+			height:100%;
+			overflow:hidden;
+		}
+		
+		.auth-container {
+            background-color: rgba(255, 255, 255, 0.95); /* Устанавливаем полупрозрачный белый фон для контейнера */
+            padding: 30px; /* Устанавливаем внутренние отступы */
+            border-radius: 20px; /* Закругляем углы контейнера */
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Добавляет тень к контейнеру */
+            width: 100%; /* Устанавливаем ширину контейнера на 100% */
+            max-width: 400px; /* Устанавливаем максимальную ширину контейнера */
+            text-align: center; /* Выравниваем  текст по центру */
+			margin-top:15%;
+			margin-left:35%;
+        }
+		
+		.auth-container form {
+            display: flex; /* Использует Flexbox для размещения элементов формы */
+            flex-direction: column; /* Располагает элементы формы в колонку */
+        }
+		
+		.auth-container input {
+            margin-bottom: 15px; /* Устанавливает нижний отступ для полей ввода */
+            padding: 10px; /* Устанавливает внутренние отступы для полей ввода */
+            border: 1px solid #ccc; /* Устанавливает рамку для полей ввода */
+            border-radius: 5px; /* Закругляет углы полей ввода */
+            transition: border-color 0.3s; /* Добавляет плавный переход для изменения цвета рамки */
+        }
+        .auth-container input:focus {
+            border-color: #38A3A5; /* Изменяет цвет рамки при фокусировке на поле ввода */
+            outline: none; /* Убирает стандартное выделение при фокусировке */
+        }
+		
+		.auth-container button {
+            background-color: #57CC99; /* Устанавливает цвет фона для кнопок */
+            color: white; /* Устанавливает цвет текста кнопок */
+            padding: 20px; /* Устанавливает внутренние отступы для кнопок */
+            border: none; /* Убирает рамку у кнопок */
+            border-radius: 10px; /* Закругляет углы кнопок */
+            cursor: pointer; /* Меняет курсор на указатель при наведении */
+            transition: background-color 0.3s; /* Добавляет плавный переход для изменения цвета фона */
+        }
+        .auth-container button:hover {
+            background-color: #80ED99; /* Изменяет цвет фона кнопок при наведении */
+        }
+		
+		 .navbar{
+	overflow: hidden;
+	background: #22577A;
+	position:fixed;
+    top:0;
+	width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar a{
+	float: right;
+	display: block;
+	color: rgb(255, 255, 255);
+	text-align:right;
+	padding: 30px 30px;
+	text-decoration: none;
+	font-family: 'Michroma',sans-serif;
+	font-style: oblique;
+	font-size: 24px;
+	margin: 3px;
+	}
+.navbar a:hover{
+	background:rgba(147, 211, 243, 0.815);
+	color: #ffffff;
+	}
+.box_nav{
+    height: 25px;
+}
+	</style>
+	
+<body>
+<div class="box_nav">
+        <div class="navbar" style="position: fixed;">
+            <a href="logout"> Logout </a>
+            <a href="user_kabinet1.php">Back to account</a>
+        </div>
+</div>
+<div class="auth-container">
+
+<form action="find_exercises.php" method="post">
+<p>Choose your target: <select name="target">
+	<option value="abs">abs</option>
+    <option value="upper-body" selected>upper-body</option>
+    <option value="legs">legs</option>
+	</select></p>
+<p>Number of exercises: <input type="number" name="number_of_exercises"></p>
+<p><button type="submit" name="done">Find exercises</button></p>
+</form>
+</div>
+</body>
+
+</html>

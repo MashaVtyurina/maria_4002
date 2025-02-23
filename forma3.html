@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<img src="C:\xampp\htdocs\training_helper\images\7677841e3ea4a495f7bcbe86543e6449.jpg" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Kalnia:wght@500&family=Lemonada:wght@600&family=Michroma&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; /* Убираем внешние отступы у body */
+            font-family: 'Michroma', sans-serif; /* Устанавливаем  шрифт для всего документа */
+            background-image: url("https://i.pinimg.com/originals/25/89/f1/2589f1f6017f92b0df6c4c6b7b282a85.jpg"); /* фоновое изображение */
+            background-size: cover; /* Масштабируем фоновое изображение, чтобы оно покрывало весь экран */
+            background-repeat: no-repeat; /* Запрещаем повторение фонового изображения */
+            background-attachment: fixed; /* Фоновое изображение фиксируется при прокрутке */
+            color: #000000; /* Устанавливаем цвет текста */
+            display: flex; /* Flexbox для размещения элементов */
+            justify-content: center; /* Центрируем элементы по горизонтали */
+            align-items: center; /* Центрируем элементы по вертикали */
+            height: 100vh; /* Устанавливаем высоту body на 100% высоты окна просмотра */
+        }
+        .auth-container {
+            background-color: rgba(255, 255, 255, 0.95); /* Устанавливаем полупрозрачный белый фон для контейнера */
+            padding: 30px; /* Устанавливаем внутренние отступы */
+            border-radius: 20px; /* Закругляем углы контейнера */
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Добавляет тень к контейнеру */
+            width: 100%; /* Устанавливаем ширину контейнера на 100% */
+            max-width: 400px; /* Устанавливаем максимальную ширину контейнера */
+            text-align: center; /* Выравниваем  текст по центру */
+        }
+        .auth-container h2 {
+            margin-bottom: 20px; 
+            font-family: 'Michroma', serif; /* Устанавливает шрифт для заголовка */
+            color: #22577A; /* Устанавливает цвет заголовка */
+        }
+        .auth-container form {
+            display: flex; /* Использует Flexbox для размещения элементов формы */
+            flex-direction: column; /* Располагает элементы формы в колонку */
+        }
+        .auth-container label {
+            margin-bottom: 5px; /* Устанавливает нижний отступ для меток */
+            text-align: left; /* Выравнивает текст меток по левому краю */
+            font-weight: bold; /* Устанавливает жирный шрифт для меток */
+        }
+        .auth-container input {
+            margin-bottom: 15px; /* Устанавливает нижний отступ для полей ввода */
+            padding: 10px; /* Устанавливает внутренние отступы для полей ввода */
+            border: 1px solid #ccc; /* Устанавливает рамку для полей ввода */
+            border-radius: 5px; /* Закругляет углы полей ввода */
+            transition: border-color 0.3s; /* Добавляет плавный переход для изменения цвета рамки */
+        }
+        .auth-container input:focus {
+            border-color: #38A3A5; /* Изменяет цвет рамки при фокусировке на поле ввода */
+            outline: none; /* Убирает стандартное выделение при фокусировке */
+        }
+        .auth-container button {
+            background-color: #57CC99; /* Устанавливает цвет фона для кнопок */
+            color: white; /* Устанавливает цвет текста кнопок */
+            padding: 10px; /* Устанавливает внутренние отступы для кнопок */
+            border: none; /* Убирает рамку у кнопок */
+            border-radius: 10px; /* Закругляет углы кнопок */
+            cursor: pointer; /* Меняет курсор на указатель при наведении */
+            transition: background-color 0.3s; /* Добавляет плавный переход для изменения цвета фона */
+        }
+        .auth-container button:hover {
+            background-color: #80ED99; /* Изменяет цвет фона кнопок при наведении */
+        }
+        .auth-container .toggle-auth {
+            margin-top: 15px; /* Устанавливает верхний отступ для ссылки переключения */
+            color: #22577A; /* Устанавливает цвет текста ссылки переключения */
+            text-decoration: none; /* Убирает подчеркивание у ссылки */
+            cursor: pointer; /* Меняет курсор на указатель при наведении */
+            font-weight: bold; /* Устанавливает жирный шрифт для ссылки */
+        }
+        .auth-container .toggle-auth:hover {
+            text-decoration: underline; /* Подчеркивает ссылку при наведении */
+        }
+        .hidden {
+            display: none; /* Скрывает элемент с классом hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div id="register-section">
+            <h2>Registration</h2>
+            <form id="register-form" action="sign_in_th.php" method="POST">
+                <label for="first-name">Name</label>
+                <input type="text" id="first-name" name="name" required placeholder="Enter your name">
+                <label for="last-name">Surname</label>
+                <input type="text" id="last-name" name="surname" required placeholder="Enter your surname">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <button type="submit">Sign in</button>
+            </form>
+            <!-- Ссылка для переключения на авторизацию -->
+            <div class="toggle-auth" id="show-login">Already registered? Login</div>
+        </div>
+
+        <div id="login-section" class="hidden">
+            <h2>Login</h2>
+            <form id="login-form" action="login_th.php" method="POST">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required placeholder="Enter your email">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle-auth" id="show-register">Not registered yet? Sign in</div>
+        </div>
+    </div>
+
+    <script>
+        // Получаем элементы секций и ссылок переключения
+        const registerSection = document.getElementById('register-section');
+        const loginSection = document.getElementById('login-section');
+        const showLogin = document.getElementById('show-login');
+        const showRegister = document.getElementById('show-register');
+
+        // Добавляем обработчик события для переключения на авторизацию
+        showLogin.addEventListener('click', () => {
+            registerSection.classList.add('hidden'); // Скрываем секцию регистрации
+            loginSection.classList.remove('hidden'); // Показываем секцию авторизации
+        });
+
+        // Добавляем обработчик события для переключения на регистрацию
+        showRegister.addEventListener('click', () => {
+            loginSection.classList.add('hidden'); // Скрываем секцию авторизации
+            registerSection.classList.remove('hidden'); // Показываем секцию регистрации
+        });
+    </script>
+</body>
+</html>

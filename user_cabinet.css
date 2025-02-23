@@ -1,0 +1,73 @@
+body{
+	background-image: url("https://sportishka.com/uploads/posts/2023-03/1678232203_sportishka-com-p-sportivnii-inventar-dlya-doma-sport-instag-65.jpg");
+	background-size:cover;
+}
+img.background {
+  min-height: 100%;
+  min-width: 640px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.container{
+	display:flex;
+	flex-direction:column;
+	position:relative;
+height:100vh;
+width:100%;
+background-color:transparent;
+border-radius:20px;
+position:absolute;
+
+
+}
+
+h1{
+font-family:'Kalnia',serif;
+font-size:90px;
+color:white;
+margin-left:20px;
+}
+
+a{
+font-family:'Kalnia',serif;
+color:#B0E0E6;
+font-size:30px;
+margin-left:20px;
+margin-top:30px;
+}
+
+button{
+	background-color: pink;
+	font-family:'Kalnia',serif;
+	font-size:20px;
+	width:500px;
+	height:40px;
+	border-radius:15px;
+}
+
+#hello{
+	
+	height: 200px;
+	width:500px;
+	border-radius:15px;
+}
+
+	
+}
+.btn{
+	display:flex;
+	flex-direction:column;
+	
+}
+
+

@@ -1,0 +1,73 @@
+<?php>
+
+$dbc=mysqli_connect('localhost','root','B@dfencer','training_helper')or die('Error connecting to MySQL server');
+
+if(isset($_POST["submit"])){
+$this_email=$_POST["email"];
+$_SESSION['email']=$this_email;
+$this_password=$_POST["password"];
+session_start();
+$query_user="SELECT name,surname,scores from users where email=$this_email,password=$this_password";
+$result=mysqli_query($dbc,$query_user) or die("Error querying database");
+//$_SESSION['email']=$result[2];
+//$_SESSION['name']=$result[0];
+//$_SESSION['surname']=$result[1];
+//$_SESSION['scores']=$result[4];
+//$_SESSION['photo']=$result[6];
+
+mysqli_close($dbc);
+?>
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="user_kabinet.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Kalnia:wght@500&family=Lemonada:wght@600&family=Michroma&family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <div class="box_nav">
+        <div class="navbar" style="position: fixed;">
+            <a href="#home"> Logout </a>
+            <a href="#News"> Settings </a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="box">
+            <div class="photo">
+                <img src="C:\Users\vtyur\OneDrive\Desktop\third_girl.jpg"></img>
+            </div>
+        </div>
+        <div class="sidebar">
+            
+            <div class="info">
+			<?php 
+                // LOOP TILL END OF DATA
+                while($rows=$result->fetch_assoc())
+                {
+            ?>
+                <div>
+                    <h1><?php echo $rows['name'];?></h1>
+                    <h1><?php echo $rows['surname'];?></h1>
+                    <div class="scores"><?php echo $rows['scores'];?>></div>
+                </div>
+				<?php
+                }
+            ?>
+            </div> 
+            <div class="button_training">Select exercises
+                    <a href="find_exercices.php"></a>
+            </div>
+        </div>
+    </div>
+    <div class="buttons_footer">
+            <!--<div class="button_top">Top users-->
+			<a class="button_top" href="top_users.php">Top users</a>
+            <!--</div>-->
+            <a class="button_diet" method='POST' href="show_diet_plan.php">Show my diet plan</a>
+            <!--</div>-->
+    </div>
+</body>
+</html>
