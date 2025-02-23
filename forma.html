@@ -1,0 +1,243 @@
+<html>
+<img src="C:\Users\maria\Downloads\ф1.jpg" class="background">
+<head>
+<title>my form</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Kalnia:wght@500&family=Lemonada:wght@600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" >
+<link rel="stylesheet" href="forma.css">
+<body>
+<div class="container">
+
+<!--<div class="forms">-->
+<div class="form">
+<div class="forms">
+<div class="login-form">
+<form id="form1" method="post" action="#">
+<h1>Welcome to FairyTopia!</h1>
+
+<div class="inp"
+<label for="email">Email</label>
+<div class="torow">
+<input id="em" type="text"  placeholder="your email" name="email" required>
+<i class="uil uil-envelope icon"></i>
+</div>
+
+</div>
+
+<div class="inp">
+<label for="password">Password</label>
+<div class="torow">
+<input id="p0" type="password"  placeholder="your password" name="password"required>
+<i class="uil uil-lock icon"></i>
+</div>
+</div>
+
+<div class="btn">
+<button type="submit">Login</button>
+</div>
+</form>
+
+<div class="login-signup">
+<div>
+<span class="text">Not a member?</span>
+</div>
+<div>
+<a href="#" class="text signup-link">Sign up now</a>
+</div>
+</div>
+
+
+</div>
+<div class="reg-form">
+<form id="form2" action="#">
+<h1>Join us!</h1>
+
+<div class="inp"
+<label for="name">Name</label>
+<div class="torow">
+<input id="n" type="text"  placeholder="Create an adorable name" name="name" required>
+<i class="uil uil-user icon"></i>
+</div>
+</div>
+
+<div class="inp"
+<label for="email">Email</label>
+<div class="torow">
+<input id="em" type="text"  placeholder="Here is a place for your email" name="email" required>
+<i class="uil uil-envelope icon"></i>
+</div>
+</div>
+
+<div class="inp">
+<label for="password">Password</label>
+<div class="torow">
+<input id="p1" type="password"  placeholder="Create a password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Должен содержать по меньшей мере одну цифру, одну большую и одну маленькую буквы латинского алфавита и быть в длину не менее 8 символов" required>
+<i class="uil uil-lock icon"></i>
+</div>
+</div>
+<div id="message">
+  <h3>Password must conclude:</h3>
+  <p id="letter" class="invalid"><b>A lowercase</b> letter</p>
+  <p id="capital" class="invalid"><b>An uppercase</b>letter</p>
+  <p id="number" class="invalid"><b>A digit</b></p>
+  <p id="length" class="invalid">At least <b>8 symbols</b></p>
+</div>
+
+<div class="inp">
+<label for="password2">Password</label>
+<div class="torow">
+<input id="p2" type="password"  placeholder="Repeat the password" onkeyup="check()" name="password2"required>
+<i class="uil uil-lock icon"></i>
+</div>
+</div>
+<div id="message2">
+<p>Passwords don't match</p>
+</div>
+
+<div class="btn">
+<button type="submit">Enter this party</button>
+</div>
+
+</form>
+
+<div class="login-signup">
+<div>
+<span class="text">Already a member?</span>
+</div>
+<div>
+<a href="#" class="text login-link">Login now</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<!--/div-->
+
+
+</div>
+
+<script>
+form1.addEventListener("submit", (e) => {
+ e.preventDefault();
+ var name = document.getElementById("n").value;
+ localStorage.setItem('name',name);
+ if (name===''){
+ alert('please, sign up first');
+ }else{
+ var imya = localStorage.getItem('name');
+ alert(imya);
+ window.location.href = "result2.html";
+}});
+
+form2.addEventListener("submit", (e) => {
+ e.preventDefault();
+ var name = document.getElementById("n").value;
+ localStorage.setItem('name',name);
+ var imya = localStorage.getItem('name');
+ alert(imya);
+ window.location.href = "result2.html";
+});
+
+//for swiping
+signUp = document.querySelector(".signup-link");
+login = document.querySelector(".login-link");
+	  
+
+signUp.addEventListener("click",() => {
+//alert('hello');
+rg=document.querySelector(".reg-form");
+lg=document.querySelector(".login-form");
+		rg.style="opacity:1;";
+		lg.style="opacity:0; margin-left:-45%;transition: margin-left 0.2s ease";
+		 //container.classList.add("active");
+		 // alert("done");
+	 });
+	
+login.addEventListener("click",() => {
+rg=document.querySelector(".reg-form");
+lg=document.querySelector(".login-form");
+		rg.style="opacity:0; margin-left:-45%;transition: margin-right 0.2s ease";
+		lg.style="opacity:1;"
+		 //container.classList.remove("active");
+	 });
+	 
+	 
+var myInput = document.getElementById("p1");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+var myInput2 = document.getElementById("p2");
+
+// Когда пользователь кликает в поле ввода пароля, выводим область сообщений
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// Когда пользователь кликает вне поля ввода пароля, скрываем область сообщений
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// Когда пользователь начинает что-то печатать в поле ввода пароля
+myInput.onkeyup = function() {
+  // Проверяем на маленькие буквы
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Проверяем на заглавные буквы
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Проверяем на цифры
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Проверяем длину
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+function check(){
+if(myInput.value !== myInput2.value){
+document.getElementById("message2").style.display="block";
+}else{
+document.getElementById("message2").style.display="none";
+}
+}
+</script>
+
+
+
+</body>
+</html>

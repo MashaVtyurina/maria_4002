@@ -1,0 +1,163 @@
+img.background {
+  min-height: 100%;
+  min-width: 640px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+.container{
+	position:relative;
+	max-width:450px;
+	width:150%;
+	background:#fff;
+	box-shadow:0 5px 10px rgba(0,0,0,0.1);
+	border-radius:10px;
+	overflow-X:hidden;
+	overflow-Y:auto;
+
+}
+
+h1{
+	padding-bottom:10px;
+	text-align:center;
+}
+
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	font-family: 'Kalnia',serif;
+}
+
+body{
+	display:flex;
+	height:100vh;
+	align-items:center;
+	justify-content:center;
+	background-color: #DB7093;
+}
+
+.container .form{
+	padding:30px;
+	width:100%;
+	background-color:#fff;
+	
+}
+
+button{
+	height:10%;
+	width:100%;
+	background-color:#008000;
+	color:white;
+	font-size:30px;
+	margin-top:30px;
+}
+
+
+.form .login-signup{
+	display:flex;
+	flex-direction: row;
+	margin-top:20px;
+	justify-content:space-between;
+	
+}
+.inp{
+	margin-top:20px;
+}
+
+.inp input{
+	height:15%;
+	width:100%;
+	font-size:18px;
+}
+
+/*swiping dont work*/
+
+.container .forms{
+	display:flex;
+	width:200%;
+	height:440px;
+	align-items:center;
+	/*background-color:red;*/
+	transition: height 0.2s ease;
+}
+
+.container.active .login-form{
+	margin-left:-50%;
+	opacity: 0;
+	transition:margin-left 0.18s ease,opacity 0.15s ease;
+}
+
+.container .reg-form{
+	opacity:0;
+	transition:opacity 0.09s ease;
+}
+
+.container.active .reg-form{
+	opacity:1;
+	transition:opacity 0.2s ease;
+	
+}
+
+.container.active .forms{
+	height:600px;
+}
+
+/*password check */
+#message {
+  display:none;
+  background: #ffffff;
+  color: #000;
+  position: relative;
+  padding: 5px;
+  margin-top: 3px;
+}
+
+#message p {
+  padding: 2px 15px;
+  font-size: 15px;
+}
+
+#message2 {
+	display:none;
+	background:#ffffff;
+	position:relative;
+	padding: 5px;
+	color:'pink';
+	margin-top:3px;
+}
+
+#message2 p {
+  padding: 2px 15px;
+  font-size: 15px;
+}
+/* Добавляем зеленый цвет и галочку, когда требование выполнено */
+.valid {
+  color: #3CB371;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Добавляем красный цвет и крест, когда требование не выполнено */
+.invalid {
+  color: #FF1493;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+.torow{
+	display:flex;
+	flex-direction:row;
+}
